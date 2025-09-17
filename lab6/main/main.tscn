@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://bx7lcaeiduoet"]
+
+[ext_resource type="Script" uid="uid://u2l4i4neovdp" path="res://main/main.gd" id="1_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://ych2sdkluhsj" path="res://assets/meeToo.tscn" id="2_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://b3y2e0jgxo51v" path="res://Scene decoration/Probodobodyne.glb" id="3_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://yqfbgdncbyln" path="res://Scene decoration/Earth.glb" id="4_kfbq2"]
+[ext_resource type="PackedScene" uid="uid://bd83yu8yw0naf" path="res://Scene decoration/Spaceship.glb" id="5_4dugh"]
+[ext_resource type="PackedScene" uid="uid://ddvxtskw6c75q" path="res://Scene decoration/alien in green spaceship.glb" id="6_67ri8"]
+[ext_resource type="Texture2D" uid="uid://dfj36r6q3utx" path="res://Scene decoration/Space.jpg" id="7_4dugh"]
+[ext_resource type="FontFile" uid="uid://cm2irwkmbk2od" path="res://assets/THSarabun Bold.ttf" id="8_67ri8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfbq2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4dugh"]
+material = SubResource("ShaderMaterial_kfbq2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67ri8"]
+albedo_texture = ExtResource("7_4dugh")
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_pjrb6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999713, 0.0239432, 0, -0.0239432, 0.999713, 0, 4.60464, 23.0151)
+
+[node name="meeToo" parent="." instance=ExtResource("2_xwkvk")]
+transform = Transform3D(0.924874, 0, 1.18093, 0, 1.5, 0, -1.18093, 0, 0.924874, -15.6404, 0, 0)
+
+[node name="meeToo2" parent="." instance=ExtResource("2_xwkvk")]
+transform = Transform3D(1.39389, 0, 0.554133, 0, 1.5, 0, -0.554133, 0, 1.39389, -7.82783, 0, 0)
+
+[node name="meeToo3" parent="." instance=ExtResource("2_xwkvk")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.370811, 0, 0)
+
+[node name="meeToo4" parent="." instance=ExtResource("2_xwkvk")]
+transform = Transform3D(1.46692, 0, 0.313302, 0, 1.5, 0, -0.313302, 0, 1.46692, 7.81112, 0, 0)
+
+[node name="meeToo5" parent="." instance=ExtResource("2_xwkvk")]
+transform = Transform3D(0.261993, 0, -1.47694, 0, 1.5, 0, 1.47694, 0, 0.261993, 14.022, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.969016, -0.246999, -9.16188e-09, 0.23857, -0.935949, 0.259005, -0.0639739, 0.25098, 0.965876, 0, 12.6749, 20.0656)
+
+[node name="Probodobodyne" parent="." instance=ExtResource("3_xwkvk")]
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 10, 0, -2, 0)
+
+[node name="Earth" parent="." instance=ExtResource("4_kfbq2")]
+transform = Transform3D(0.477524, -0.133067, -0.627904, -0.165946, 0.730414, -0.280994, 0.620026, 0.297975, 0.408385, -61.6115, 49.9668, -76.7753)
+
+[node name="Ship" parent="." instance=ExtResource("5_4dugh")]
+transform = Transform3D(0.328818, 4.61936e-07, 0.944393, 0.770774, 0.577829, -0.268367, -0.545698, 0.816158, 0.19, -13.4589, 23.425, -38.8358)
+
+[node name="alien in green spaceship" parent="." instance=ExtResource("6_67ri8")]
+transform = Transform3D(14.0341, 0, -14.2494, 0, 20, 0, 14.2494, 0, 14.0341, 30.84, 23.1685, -42.5653)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(380, 0, 0, 0, 180, 0, 0, 0, 90, 0, 54.5076, -84.686)
+mesh = SubResource("QuadMesh_4dugh")
+surface_material_override/0 = SubResource("StandardMaterial3D_67ri8")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 196.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("8_67ri8")
+theme_override_font_sizes/font_size = 25
+text = "นางสาวณัฐนันทน์ บุษดี
+รหัสนักศึกษา 673380037-1
+SEC.01"
